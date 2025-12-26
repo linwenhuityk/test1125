@@ -1,20 +1,60 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# HR Magic Box - Lucky Draw & Team Organizer
 
-# Run and deploy your AI Studio app
+A React application built with Vite, utilizing TypeScript for type safety.
 
-This contains everything you need to run your app locally.
+## 🚀 Getting Started
 
-View your app in AI Studio: https://ai.studio/apps/drive/1qTM4-y9de7OyD79aJiA6ejtATLKb5V1n
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm (comes with Node.js)
 
-## Run Locally
+### Installation
 
-**Prerequisites:**  Node.js
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
 
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Development
+
+Start the development server:
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:3000`.
+
+### Building for Production
+
+Build the application for production:
+```bash
+npm run build
+```
+The build artifacts will be stored in the `dist/` directory.
+
+To preview the production build locally:
+```bash
+npm run preview
+```
+
+## 🛠 Project Structure
+
+- `src/`: Source code
+  - `components/`: React components
+  - `App.tsx`: Main application component
+  - `index.tsx`: Entry point
+- `public/`: Static assets
+- `vite.config.ts`: Vite configuration
+
+## 📦 Deployment
+
+This project is configured to automatically deploy to **GitHub Pages** using GitHub Actions.
+
+1. Push your changes to the `main` branch.
+2. The GitHub Action defined in `.github/workflows/deploy.yml` will trigger.
+3. It will build the project and deploy the `dist` folder to the `gh-pages` branch.
+4. Ensure GitHub Pages settings in your repository are set to serve from the `gh-pages` branch.
