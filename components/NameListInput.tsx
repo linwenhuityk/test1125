@@ -47,6 +47,21 @@ const NameListInput: React.FC<NameListInputProps> = ({ onUpdate, initialValue })
     setText(mockNames.join('\n'));
   };
 
+  const loadLargeMockData = () => {
+    const surnames = "陳林黃張李王吳劉蔡楊許鄭謝郭洪曾邱廖賴周徐蘇葉莊呂江何蕭羅高潘簡朱鍾彭游詹胡施沈余盧梁趙顏柯翁魏孫戴范宋鄧杜侯曹薛傅丁溫紀蔣歐藍連古汪馬董卓程姚";
+    const names1 = "怡欣雅婷志豪建宏俊傑淑芬美玲冠宇家豪雅雯志偉詩涵雅惠麗華佩珊秀英建志俊宏文雄宗翰郁婷冠志嘉宏惠君";
+    const names2 = "安平樂康大偉光明美麗聰明智慧勇敢誠實善良博學多聞吉祥如意快樂幸福美滿成功勝利希望夢想和平友愛";
+    
+    const largeList = [];
+    for(let i=0; i<100; i++) {
+        const sur = surnames[Math.floor(Math.random() * surnames.length)];
+        const n1 = names1[Math.floor(Math.random() * names1.length)];
+        const n2 = names2[Math.floor(Math.random() * names2.length)];
+        largeList.push(`${sur}${n1}${n2}`);
+    }
+    setText(largeList.join('\n'));
+  };
+
   const removeDuplicates = () => {
     const uniqueNames = Array.from(new Set(currentNames));
     setText(uniqueNames.join('\n'));
@@ -98,6 +113,12 @@ const NameListInput: React.FC<NameListInputProps> = ({ onUpdate, initialValue })
             className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
           >
             <i className="fas fa-vial"></i> 載入範例名單
+          </button>
+          <button 
+            onClick={loadLargeMockData}
+            className="px-4 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
+          >
+            <i className="fas fa-users"></i> 載入 100 人測試
           </button>
           {duplicates.length > 0 && (
             <button 
